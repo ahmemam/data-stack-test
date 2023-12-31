@@ -1,0 +1,17 @@
+
+
+============================== 2023-12-31 08:29:04.620959 | e3c32fa3-5ebf-4356-80d4-604f4da975ba ==============================
+[0m08:29:04.620959 [info ] [MainThread]: Running with dbt=1.4.6
+[0m08:29:04.622485 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/opt/airflow/dbt', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'project_dir': '/opt/airflow/dbt/dwh', 'target': 'prod_airflow', 'config_dir': False, 'which': 'debug', 'indirect_selection': 'eager'}
+[0m08:29:04.622643 [debug] [MainThread]: Tracking: tracking
+[0m08:29:04.626701 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd04471b450>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd044730b10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd044730910>]}
+[0m08:29:04.688529 [debug] [MainThread]: Executing "git --help"
+[0m08:29:04.695868 [debug] [MainThread]: Acquiring new postgres connection 'debug'
+[0m08:29:04.696291 [debug] [MainThread]: Using postgres connection "debug"
+[0m08:29:04.696582 [debug] [MainThread]: On debug: select 1 as id
+[0m08:29:04.696774 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m08:29:04.700704 [debug] [MainThread]: SQL status: SELECT 1 in 0 seconds
+[0m08:29:04.701555 [debug] [MainThread]: On debug: Close
+[0m08:29:04.701972 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd04471b150>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd042e96350>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd042e96e10>]}
+[0m08:29:04.702254 [debug] [MainThread]: Flushing usage events
+[0m08:29:05.882186 [debug] [MainThread]: Connection 'debug' was properly closed.

@@ -1,0 +1,57 @@
+[2023-12-30T15:22:53.132+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: run_dbt_model_cosmos.dbt_dwh_project.daily_customer_drivers.daily_customer_drivers_test scheduled__2022-09-11T00:00:00+00:00 [queued]>
+[2023-12-30T15:22:53.146+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: run_dbt_model_cosmos.dbt_dwh_project.daily_customer_drivers.daily_customer_drivers_test scheduled__2022-09-11T00:00:00+00:00 [queued]>
+[2023-12-30T15:22:53.147+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2023-12-30T15:22:53.147+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 6
+[2023-12-30T15:22:53.147+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2023-12-30T15:22:53.163+0000] {taskinstance.py:1383} INFO - Executing <Task(DbtTestLocalOperator): dbt_dwh_project.daily_customer_drivers.daily_customer_drivers_test> on 2022-09-11 00:00:00+00:00
+[2023-12-30T15:22:53.172+0000] {standard_task_runner.py:55} INFO - Started process 20336 to run task
+[2023-12-30T15:22:53.175+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'run_dbt_model_cosmos', 'dbt_dwh_project.daily_customer_drivers.daily_customer_drivers_test', 'scheduled__2022-09-11T00:00:00+00:00', '--job-id', '206', '--raw', '--subdir', 'DAGS_FOLDER/run_dbt_models_cosmos.py', '--cfg-path', '/tmp/tmpt1opi9mz']
+[2023-12-30T15:22:53.176+0000] {standard_task_runner.py:83} INFO - Job 206: Subtask dbt_dwh_project.daily_customer_drivers.daily_customer_drivers_test
+[2023-12-30T15:22:53.254+0000] {task_command.py:376} INFO - Running <TaskInstance: run_dbt_model_cosmos.dbt_dwh_project.daily_customer_drivers.daily_customer_drivers_test scheduled__2022-09-11T00:00:00+00:00 [running]> on host 683423f116e7
+[2023-12-30T15:22:53.324+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=alonso_md
+AIRFLOW_CTX_DAG_ID=run_dbt_model_cosmos
+AIRFLOW_CTX_TASK_ID=dbt_dwh_project.daily_customer_drivers.daily_customer_drivers_test
+AIRFLOW_CTX_EXECUTION_DATE=2022-09-11T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-09-11T00:00:00+00:00
+[2023-12-30T15:22:53.332+0000] {base.py:71} INFO - Using connection ID 'postgres_default' for task execution.
+[2023-12-30T15:22:53.333+0000] {local.py:136} INFO - Cloning project to writable temp directory /tmp/tmp46i199j5 from //opt/airflow/dags/../dbt/dwh
+[2023-12-30T15:22:53.396+0000] {local.py:157} INFO - Trying to run the command:
+ ['dbt', 'test', '--vars', '{"target_date": "2022-09-11"}', '--models', 'daily_customer_drivers', '--profile', 'postgres_profile']
+From /tmp/tmp46i199j5/dbt_project
+[2023-12-30T15:22:53.396+0000] {adapted_subprocesshook.py:53} INFO - Tmp dir root location: 
+ /tmp
+[2023-12-30T15:22:53.396+0000] {adapted_subprocesshook.py:66} INFO - Running command: ['dbt', 'test', '--vars', '{"target_date": "2022-09-11"}', '--models', 'daily_customer_drivers', '--profile', 'postgres_profile']
+[2023-12-30T15:22:53.409+0000] {adapted_subprocesshook.py:77} INFO - Output:
+[2023-12-30T15:22:55.440+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:55  Running with dbt=1.4.6
+[2023-12-30T15:22:55.502+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:55  Unable to do partial parsing because config vars, config profile, or config target have changed
+[2023-12-30T15:22:55.503+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:55  Unable to do partial parsing because profile has changed
+[2023-12-30T15:22:55.504+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:55  Unable to do partial parsing because env vars used in profiles.yml have changed
+[2023-12-30T15:22:57.260+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:57  Found 8 models, 15 tests, 0 snapshots, 0 analyses, 703 macros, 0 operations, 0 seed files, 3 sources, 0 exposures, 0 metrics
+[2023-12-30T15:22:57.262+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:57
+[2023-12-30T15:22:57.430+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:57  Concurrency: 1 threads (target='dev')
+[2023-12-30T15:22:57.430+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:57
+[2023-12-30T15:22:57.436+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:57  1 of 4 START test dbt_expectations_expect_column_values_to_be_between_daily_customer_drivers_healthscore__900__100__False  [RUN]
+[2023-12-30T15:22:57.474+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:57  1 of 4 PASS dbt_expectations_expect_column_values_to_be_between_daily_customer_drivers_healthscore__900__100__False  [[32mPASS[0m in 0.04s]
+[2023-12-30T15:22:57.476+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:57  2 of 4 START test dbt_expectations_expect_column_values_to_be_between_daily_customer_drivers_monthlysalary__150000__600__False  [RUN]
+[2023-12-30T15:22:57.497+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:57  2 of 4 PASS dbt_expectations_expect_column_values_to_be_between_daily_customer_drivers_monthlysalary__150000__600__False  [[32mPASS[0m in 0.02s]
+[2023-12-30T15:22:57.498+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:57  3 of 4 START test not_null_daily_customer_drivers_customerId ................... [RUN]
+[2023-12-30T15:22:57.523+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:57  3 of 4 PASS not_null_daily_customer_drivers_customerId ......................... [[32mPASS[0m in 0.02s]
+[2023-12-30T15:22:57.524+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:57  4 of 4 START test unique_daily_customer_drivers_customerId ..................... [RUN]
+[2023-12-30T15:22:57.559+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:57  4 of 4 PASS unique_daily_customer_drivers_customerId ........................... [[32mPASS[0m in 0.03s]
+[2023-12-30T15:22:57.643+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:57
+[2023-12-30T15:22:57.643+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:57  Finished running 4 tests in 0 hours 0 minutes and 0.38 seconds (0.38s).
+[2023-12-30T15:22:57.655+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:57
+[2023-12-30T15:22:57.656+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:57  [32mCompleted successfully[0m
+[2023-12-30T15:22:57.656+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:57
+[2023-12-30T15:22:57.656+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:57  Done. PASS=4 WARN=0 ERROR=0 SKIP=0 TOTAL=4
+[2023-12-30T15:22:58.642+0000] {adapted_subprocesshook.py:91} INFO - Command exited with return code 0
+[2023-12-30T15:22:58.681+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/models/baseoperator.py:1390: RemovedInAirflow3Warning: Passing 'execution_date' to 'TaskInstance.xcom_push()' is deprecated.
+  context['ti'].xcom_push(key=key, value=value, execution_date=execution_date)
+
+[2023-12-30T15:22:58.702+0000] {taskinstance.py:1406} INFO - Marking task as SUCCESS. dag_id=run_dbt_model_cosmos, task_id=dbt_***_project.daily_customer_drivers.daily_customer_drivers_test, execution_date=20220911T000000, start_date=20231230T152253, end_date=20231230T152258
+[2023-12-30T15:22:58.763+0000] {local_task_job.py:164} INFO - Task exited with return code 0
+[2023-12-30T15:22:58.819+0000] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check

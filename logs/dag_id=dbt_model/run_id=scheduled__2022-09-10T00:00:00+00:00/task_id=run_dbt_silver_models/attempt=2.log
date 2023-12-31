@@ -1,0 +1,207 @@
+[2023-12-30T10:50:16.616+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dbt_model.run_dbt_silver_models scheduled__2022-09-10T00:00:00+00:00 [queued]>
+[2023-12-30T10:50:16.623+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dbt_model.run_dbt_silver_models scheduled__2022-09-10T00:00:00+00:00 [queued]>
+[2023-12-30T10:50:16.623+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2023-12-30T10:50:16.624+0000] {taskinstance.py:1363} INFO - Starting attempt 2 of 6
+[2023-12-30T10:50:16.624+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2023-12-30T10:50:16.634+0000] {taskinstance.py:1383} INFO - Executing <Task(BashOperator): run_dbt_silver_models> on 2022-09-10 00:00:00+00:00
+[2023-12-30T10:50:16.639+0000] {standard_task_runner.py:55} INFO - Started process 5582 to run task
+[2023-12-30T10:50:16.641+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'dbt_model', 'run_dbt_silver_models', 'scheduled__2022-09-10T00:00:00+00:00', '--job-id', '121', '--raw', '--subdir', 'DAGS_FOLDER/run_dbt._models.py', '--cfg-path', '/tmp/tmp83oite3p']
+[2023-12-30T10:50:16.642+0000] {standard_task_runner.py:83} INFO - Job 121: Subtask run_dbt_silver_models
+[2023-12-30T10:50:16.685+0000] {task_command.py:376} INFO - Running <TaskInstance: dbt_model.run_dbt_silver_models scheduled__2022-09-10T00:00:00+00:00 [running]> on host 683423f116e7
+[2023-12-30T10:50:16.729+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=alonso_md
+AIRFLOW_CTX_DAG_ID=dbt_model
+AIRFLOW_CTX_TASK_ID=run_dbt_silver_models
+AIRFLOW_CTX_EXECUTION_DATE=2022-09-10T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=2
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-09-10T00:00:00+00:00
+[2023-12-30T10:50:16.730+0000] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2023-12-30T10:50:16.731+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', "    dbt run     --profiles-dir //opt/***/dags/../dbt/     --project-dir ///opt/***/dags/../dbt//dwh     --target prod_*** --vars '{ target_date: 2022-09-10 }' --select silver"]
+[2023-12-30T10:50:16.738+0000] {subprocess.py:86} INFO - Output:
+[2023-12-30T10:50:18.339+0000] {subprocess.py:93} INFO - [0m10:50:18  Running with dbt=1.4.6
+[2023-12-30T10:50:18.430+0000] {subprocess.py:93} INFO - [0m10:50:18  Found 8 models, 15 tests, 0 snapshots, 0 analyses, 703 macros, 0 operations, 0 seed files, 3 sources, 0 exposures, 0 metrics
+[2023-12-30T10:50:18.431+0000] {subprocess.py:93} INFO - [0m10:50:18
+[2023-12-30T10:50:18.495+0000] {subprocess.py:93} INFO - [0m10:50:18  Concurrency: 4 threads (target='prod_***')
+[2023-12-30T10:50:18.496+0000] {subprocess.py:93} INFO - [0m10:50:18
+[2023-12-30T10:50:18.503+0000] {subprocess.py:93} INFO - [0m10:50:18  1 of 3 START sql incremental model silver.customer_information ................. [RUN]
+[2023-12-30T10:50:18.504+0000] {subprocess.py:93} INFO - [0m10:50:18  2 of 3 START sql incremental model silver.daily_customer_drivers ............... [RUN]
+[2023-12-30T10:50:18.504+0000] {subprocess.py:93} INFO - [0m10:50:18  3 of 3 START sql incremental model silver.loan_transactions .................... [RUN]
+[2023-12-30T10:50:18.591+0000] {subprocess.py:93} INFO - [0m10:50:18  2 of 3 ERROR creating sql incremental model silver.daily_customer_drivers ...... [[31mERROR[0m in 0.08s]
+[2023-12-30T10:50:18.753+0000] {subprocess.py:93} INFO - [0m10:50:18  3 of 3 OK created sql incremental model silver.loan_transactions ............... [[32mINSERT 0 9613[0m in 0.25s]
+[2023-12-30T10:50:18.765+0000] {subprocess.py:93} INFO - [0m10:50:18  1 of 3 OK created sql incremental model silver.customer_information ............ [[32mINSERT 0 28497[0m in 0.26s]
+[2023-12-30T10:50:18.821+0000] {subprocess.py:93} INFO - [0m10:50:18
+[2023-12-30T10:50:18.822+0000] {subprocess.py:93} INFO - [0m10:50:18  Finished running 3 incremental models in 0 hours 0 minutes and 0.39 seconds (0.39s).
+[2023-12-30T10:50:18.833+0000] {subprocess.py:93} INFO - [0m10:50:18
+[2023-12-30T10:50:18.833+0000] {subprocess.py:93} INFO - [0m10:50:18  [31mCompleted with 1 error and 0 warnings:[0m
+[2023-12-30T10:50:18.833+0000] {subprocess.py:93} INFO - [0m10:50:18
+[2023-12-30T10:50:18.834+0000] {subprocess.py:93} INFO - [0m10:50:18  [33mDatabase Error in model daily_customer_drivers (models/silver/daily_customer_drivers.sql)[0m
+[2023-12-30T10:50:18.834+0000] {subprocess.py:93} INFO - [0m10:50:18    operator does not exist: text < integer
+[2023-12-30T10:50:18.834+0000] {subprocess.py:93} INFO - [0m10:50:18    LINE 22:         WHEN health_score < 100 THEN 100
+[2023-12-30T10:50:18.835+0000] {subprocess.py:93} INFO - [0m10:50:18                                       ^
+[2023-12-30T10:50:18.835+0000] {subprocess.py:93} INFO - [0m10:50:18    HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+[2023-12-30T10:50:18.835+0000] {subprocess.py:93} INFO - [0m10:50:18    compiled Code at target/run/dwh/models/silver/daily_customer_drivers.sql
+[2023-12-30T10:50:18.835+0000] {subprocess.py:93} INFO - [0m10:50:18
+[2023-12-30T10:50:18.836+0000] {subprocess.py:93} INFO - [0m10:50:18  Done. PASS=2 WARN=0 ERROR=1 SKIP=0 TOTAL=3
+[2023-12-30T10:50:19.744+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2023-12-30T10:50:19.752+0000] {taskinstance.py:1851} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/bash.py", line 197, in execute
+    f'Bash command failed. The command returned a non-zero exit code {result.exit_code}.'
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2023-12-30T10:50:19.754+0000] {taskinstance.py:1406} INFO - Marking task as UP_FOR_RETRY. dag_id=dbt_model, task_id=run_dbt_silver_models, execution_date=20220910T000000, start_date=20231230T105016, end_date=20231230T105019
+[2023-12-30T10:50:19.764+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 121 for task run_dbt_silver_models (Bash command failed. The command returned a non-zero exit code 1.; 5582)
+[2023-12-30T10:50:19.786+0000] {local_task_job.py:164} INFO - Task exited with return code 1
+[2023-12-30T10:50:19.815+0000] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2023-12-30T12:07:01.820+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dbt_model.run_dbt_silver_models scheduled__2022-09-10T00:00:00+00:00 [queued]>
+[2023-12-30T12:07:01.830+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dbt_model.run_dbt_silver_models scheduled__2022-09-10T00:00:00+00:00 [queued]>
+[2023-12-30T12:07:01.830+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2023-12-30T12:07:01.830+0000] {taskinstance.py:1363} INFO - Starting attempt 2 of 6
+[2023-12-30T12:07:01.830+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2023-12-30T12:07:01.843+0000] {taskinstance.py:1383} INFO - Executing <Task(BashOperator): run_dbt_silver_models> on 2022-09-10 00:00:00+00:00
+[2023-12-30T12:07:01.847+0000] {standard_task_runner.py:55} INFO - Started process 9527 to run task
+[2023-12-30T12:07:01.849+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'dbt_model', 'run_dbt_silver_models', 'scheduled__2022-09-10T00:00:00+00:00', '--job-id', '129', '--raw', '--subdir', 'DAGS_FOLDER/run_dbt._models.py', '--cfg-path', '/tmp/tmpgbzbxzsc']
+[2023-12-30T12:07:01.850+0000] {standard_task_runner.py:83} INFO - Job 129: Subtask run_dbt_silver_models
+[2023-12-30T12:07:01.894+0000] {task_command.py:376} INFO - Running <TaskInstance: dbt_model.run_dbt_silver_models scheduled__2022-09-10T00:00:00+00:00 [running]> on host 683423f116e7
+[2023-12-30T12:07:01.949+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=alonso_md
+AIRFLOW_CTX_DAG_ID=dbt_model
+AIRFLOW_CTX_TASK_ID=run_dbt_silver_models
+AIRFLOW_CTX_EXECUTION_DATE=2022-09-10T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=2
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-09-10T00:00:00+00:00
+[2023-12-30T12:07:01.953+0000] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2023-12-30T12:07:01.954+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', "    dbt run     --profiles-dir //opt/***/dags/../dbt/     --project-dir ///opt/***/dags/../dbt//dwh     --target prod_*** --vars '{ target_date: 2022-09-10 }' --select silver"]
+[2023-12-30T12:07:01.961+0000] {subprocess.py:86} INFO - Output:
+[2023-12-30T12:07:03.619+0000] {subprocess.py:93} INFO - [0m12:07:03  Running with dbt=1.4.6
+[2023-12-30T12:07:03.717+0000] {subprocess.py:93} INFO - [0m12:07:03  Found 8 models, 15 tests, 0 snapshots, 0 analyses, 703 macros, 0 operations, 0 seed files, 3 sources, 0 exposures, 0 metrics
+[2023-12-30T12:07:03.719+0000] {subprocess.py:93} INFO - [0m12:07:03
+[2023-12-30T12:07:03.784+0000] {subprocess.py:93} INFO - [0m12:07:03  Concurrency: 4 threads (target='prod_***')
+[2023-12-30T12:07:03.784+0000] {subprocess.py:93} INFO - [0m12:07:03
+[2023-12-30T12:07:03.790+0000] {subprocess.py:93} INFO - [0m12:07:03  1 of 3 START sql incremental model silver.customer_information ................. [RUN]
+[2023-12-30T12:07:03.790+0000] {subprocess.py:93} INFO - [0m12:07:03  2 of 3 START sql incremental model silver.daily_customer_drivers ............... [RUN]
+[2023-12-30T12:07:03.791+0000] {subprocess.py:93} INFO - [0m12:07:03  3 of 3 START sql incremental model silver.loan_transactions .................... [RUN]
+[2023-12-30T12:07:03.882+0000] {subprocess.py:93} INFO - [0m12:07:03  2 of 3 ERROR creating sql incremental model silver.daily_customer_drivers ...... [[31mERROR[0m in 0.09s]
+[2023-12-30T12:07:04.035+0000] {subprocess.py:93} INFO - [0m12:07:04  3 of 3 OK created sql incremental model silver.loan_transactions ............... [[32mINSERT 0 9613[0m in 0.24s]
+[2023-12-30T12:07:04.085+0000] {subprocess.py:93} INFO - [0m12:07:04  1 of 3 OK created sql incremental model silver.customer_information ............ [[32mINSERT 0 28497[0m in 0.29s]
+[2023-12-30T12:07:04.115+0000] {subprocess.py:93} INFO - [0m12:07:04
+[2023-12-30T12:07:04.115+0000] {subprocess.py:93} INFO - [0m12:07:04  Finished running 3 incremental models in 0 hours 0 minutes and 0.40 seconds (0.40s).
+[2023-12-30T12:07:04.126+0000] {subprocess.py:93} INFO - [0m12:07:04
+[2023-12-30T12:07:04.126+0000] {subprocess.py:93} INFO - [0m12:07:04  [31mCompleted with 1 error and 0 warnings:[0m
+[2023-12-30T12:07:04.126+0000] {subprocess.py:93} INFO - [0m12:07:04
+[2023-12-30T12:07:04.127+0000] {subprocess.py:93} INFO - [0m12:07:04  [33mDatabase Error in model daily_customer_drivers (models/silver/daily_customer_drivers.sql)[0m
+[2023-12-30T12:07:04.127+0000] {subprocess.py:93} INFO - [0m12:07:04    operator does not exist: text < integer
+[2023-12-30T12:07:04.127+0000] {subprocess.py:93} INFO - [0m12:07:04    LINE 22:         WHEN health_score < 100 THEN 100
+[2023-12-30T12:07:04.127+0000] {subprocess.py:93} INFO - [0m12:07:04                                       ^
+[2023-12-30T12:07:04.128+0000] {subprocess.py:93} INFO - [0m12:07:04    HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+[2023-12-30T12:07:04.128+0000] {subprocess.py:93} INFO - [0m12:07:04    compiled Code at target/run/dwh/models/silver/daily_customer_drivers.sql
+[2023-12-30T12:07:04.128+0000] {subprocess.py:93} INFO - [0m12:07:04
+[2023-12-30T12:07:04.128+0000] {subprocess.py:93} INFO - [0m12:07:04  Done. PASS=2 WARN=0 ERROR=1 SKIP=0 TOTAL=3
+[2023-12-30T12:07:05.065+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2023-12-30T12:07:05.074+0000] {taskinstance.py:1851} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/bash.py", line 197, in execute
+    f'Bash command failed. The command returned a non-zero exit code {result.exit_code}.'
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2023-12-30T12:07:05.077+0000] {taskinstance.py:1406} INFO - Marking task as UP_FOR_RETRY. dag_id=dbt_model, task_id=run_dbt_silver_models, execution_date=20220910T000000, start_date=20231230T120701, end_date=20231230T120705
+[2023-12-30T12:07:05.088+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 129 for task run_dbt_silver_models (Bash command failed. The command returned a non-zero exit code 1.; 9527)
+[2023-12-30T12:07:05.111+0000] {local_task_job.py:164} INFO - Task exited with return code 1
+[2023-12-30T12:07:05.140+0000] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2023-12-30T13:57:27.571+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dbt_model.run_dbt_silver_models scheduled__2022-09-10T00:00:00+00:00 [queued]>
+[2023-12-30T13:57:27.581+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dbt_model.run_dbt_silver_models scheduled__2022-09-10T00:00:00+00:00 [queued]>
+[2023-12-30T13:57:27.582+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2023-12-30T13:57:27.582+0000] {taskinstance.py:1363} INFO - Starting attempt 2 of 6
+[2023-12-30T13:57:27.582+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2023-12-30T13:57:27.596+0000] {taskinstance.py:1383} INFO - Executing <Task(BashOperator): run_dbt_silver_models> on 2022-09-10 00:00:00+00:00
+[2023-12-30T13:57:27.604+0000] {standard_task_runner.py:55} INFO - Started process 15071 to run task
+[2023-12-30T13:57:27.607+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'dbt_model', 'run_dbt_silver_models', 'scheduled__2022-09-10T00:00:00+00:00', '--job-id', '138', '--raw', '--subdir', 'DAGS_FOLDER/run_dbt._models.py', '--cfg-path', '/tmp/tmpn7611925']
+[2023-12-30T13:57:27.608+0000] {standard_task_runner.py:83} INFO - Job 138: Subtask run_dbt_silver_models
+[2023-12-30T13:57:27.667+0000] {task_command.py:376} INFO - Running <TaskInstance: dbt_model.run_dbt_silver_models scheduled__2022-09-10T00:00:00+00:00 [running]> on host 683423f116e7
+[2023-12-30T13:57:27.722+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=alonso_md
+AIRFLOW_CTX_DAG_ID=dbt_model
+AIRFLOW_CTX_TASK_ID=run_dbt_silver_models
+AIRFLOW_CTX_EXECUTION_DATE=2022-09-10T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=2
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-09-10T00:00:00+00:00
+[2023-12-30T13:57:27.727+0000] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2023-12-30T13:57:27.728+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', "    dbt run     --profiles-dir //opt/***/dags/../dbt/     --project-dir ///opt/***/dags/../dbt//dwh     --target prod_*** --vars '{ target_date: 2022-09-10 }' --select silver"]
+[2023-12-30T13:57:27.740+0000] {subprocess.py:86} INFO - Output:
+[2023-12-30T13:57:29.690+0000] {subprocess.py:93} INFO - [0m13:57:29  Running with dbt=1.4.6
+[2023-12-30T13:57:29.882+0000] {subprocess.py:93} INFO - [0m13:57:29  Found 8 models, 15 tests, 0 snapshots, 0 analyses, 703 macros, 0 operations, 0 seed files, 3 sources, 0 exposures, 0 metrics
+[2023-12-30T13:57:29.884+0000] {subprocess.py:93} INFO - [0m13:57:29
+[2023-12-30T13:57:29.959+0000] {subprocess.py:93} INFO - [0m13:57:29  Concurrency: 4 threads (target='prod_***')
+[2023-12-30T13:57:29.959+0000] {subprocess.py:93} INFO - [0m13:57:29
+[2023-12-30T13:57:29.966+0000] {subprocess.py:93} INFO - [0m13:57:29  1 of 3 START sql incremental model silver.customer_information ................. [RUN]
+[2023-12-30T13:57:29.972+0000] {subprocess.py:93} INFO - [0m13:57:29  2 of 3 START sql incremental model silver.daily_customer_drivers ............... [RUN]
+[2023-12-30T13:57:29.973+0000] {subprocess.py:93} INFO - [0m13:57:29  3 of 3 START sql incremental model silver.loan_transactions .................... [RUN]
+[2023-12-30T13:57:30.102+0000] {subprocess.py:93} INFO - [0m13:57:30  2 of 3 ERROR creating sql incremental model silver.daily_customer_drivers ...... [[31mERROR[0m in 0.13s]
+[2023-12-30T13:57:30.213+0000] {subprocess.py:93} INFO - [0m13:57:30  3 of 3 ERROR creating sql incremental model silver.loan_transactions ........... [[31mERROR[0m in 0.24s]
+[2023-12-30T13:57:30.219+0000] {subprocess.py:93} INFO - [0m13:57:30  1 of 3 ERROR creating sql incremental model silver.customer_information ........ [[31mERROR[0m in 0.25s]
+[2023-12-30T13:57:30.317+0000] {subprocess.py:93} INFO - [0m13:57:30
+[2023-12-30T13:57:30.317+0000] {subprocess.py:93} INFO - [0m13:57:30  Finished running 3 incremental models in 0 hours 0 minutes and 0.43 seconds (0.43s).
+[2023-12-30T13:57:30.328+0000] {subprocess.py:93} INFO - [0m13:57:30
+[2023-12-30T13:57:30.330+0000] {subprocess.py:93} INFO - [0m13:57:30  [31mCompleted with 3 errors and 0 warnings:[0m
+[2023-12-30T13:57:30.330+0000] {subprocess.py:93} INFO - [0m13:57:30
+[2023-12-30T13:57:30.332+0000] {subprocess.py:93} INFO - [0m13:57:30  [33mDatabase Error in model daily_customer_drivers (models/silver/daily_customer_drivers.sql)[0m
+[2023-12-30T13:57:30.332+0000] {subprocess.py:93} INFO - [0m13:57:30    operator does not exist: text < integer
+[2023-12-30T13:57:30.332+0000] {subprocess.py:93} INFO - [0m13:57:30    LINE 22:         WHEN health_score < 100 THEN 100
+[2023-12-30T13:57:30.332+0000] {subprocess.py:93} INFO - [0m13:57:30                                       ^
+[2023-12-30T13:57:30.332+0000] {subprocess.py:93} INFO - [0m13:57:30    HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+[2023-12-30T13:57:30.332+0000] {subprocess.py:93} INFO - [0m13:57:30    compiled Code at target/run/dwh/models/silver/daily_customer_drivers.sql
+[2023-12-30T13:57:30.333+0000] {subprocess.py:93} INFO - [0m13:57:30
+[2023-12-30T13:57:30.333+0000] {subprocess.py:93} INFO - [0m13:57:30  [33mCompilation Error in model loan_transactions (models/silver/loan_transactions.sql)[0m
+[2023-12-30T13:57:30.334+0000] {subprocess.py:93} INFO - [0m13:57:30
+[2023-12-30T13:57:30.334+0000] {subprocess.py:93} INFO - [0m13:57:30                  The source and target schemas on this incremental model are out of sync!
+[2023-12-30T13:57:30.334+0000] {subprocess.py:93} INFO - [0m13:57:30                  They can be reconciled in several ways:
+[2023-12-30T13:57:30.335+0000] {subprocess.py:93} INFO - [0m13:57:30                    - set the `on_schema_change` config to either append_new_columns or sync_all_columns, depending on your situation.
+[2023-12-30T13:57:30.335+0000] {subprocess.py:93} INFO - [0m13:57:30                    - Re-run the incremental model with `full_refresh: True` to update the target schema.
+[2023-12-30T13:57:30.335+0000] {subprocess.py:93} INFO - [0m13:57:30                    - update the schema manually and re-run the process.
+[2023-12-30T13:57:30.335+0000] {subprocess.py:93} INFO - [0m13:57:30
+[2023-12-30T13:57:30.335+0000] {subprocess.py:93} INFO - [0m13:57:30                  Additional troubleshooting context:
+[2023-12-30T13:57:30.336+0000] {subprocess.py:93} INFO - [0m13:57:30                     Source columns not in target: []
+[2023-12-30T13:57:30.336+0000] {subprocess.py:93} INFO - [0m13:57:30                     Target columns not in source: []
+[2023-12-30T13:57:30.336+0000] {subprocess.py:93} INFO - [0m13:57:30                     New column types: [{'column_name': 'paymentperiod', 'new_type': 'double precision'}]
+[2023-12-30T13:57:30.336+0000] {subprocess.py:93} INFO - [0m13:57:30
+[2023-12-30T13:57:30.337+0000] {subprocess.py:93} INFO - [0m13:57:30
+[2023-12-30T13:57:30.337+0000] {subprocess.py:93} INFO - [0m13:57:30    > in macro process_schema_changes (macros/materializations/models/incremental/on_schema_change.sql)
+[2023-12-30T13:57:30.337+0000] {subprocess.py:93} INFO - [0m13:57:30    > called by macro materialization_incremental_default (macros/materializations/models/incremental/incremental.sql)
+[2023-12-30T13:57:30.337+0000] {subprocess.py:93} INFO - [0m13:57:30    > called by model loan_transactions (models/silver/loan_transactions.sql)
+[2023-12-30T13:57:30.338+0000] {subprocess.py:93} INFO - [0m13:57:30
+[2023-12-30T13:57:30.338+0000] {subprocess.py:93} INFO - [0m13:57:30  [33mCompilation Error in model customer_information (models/silver/customer_information.sql)[0m
+[2023-12-30T13:57:30.338+0000] {subprocess.py:93} INFO - [0m13:57:30
+[2023-12-30T13:57:30.339+0000] {subprocess.py:93} INFO - [0m13:57:30                  The source and target schemas on this incremental model are out of sync!
+[2023-12-30T13:57:30.339+0000] {subprocess.py:93} INFO - [0m13:57:30                  They can be reconciled in several ways:
+[2023-12-30T13:57:30.339+0000] {subprocess.py:93} INFO - [0m13:57:30                    - set the `on_schema_change` config to either append_new_columns or sync_all_columns, depending on your situation.
+[2023-12-30T13:57:30.339+0000] {subprocess.py:93} INFO - [0m13:57:30                    - Re-run the incremental model with `full_refresh: True` to update the target schema.
+[2023-12-30T13:57:30.340+0000] {subprocess.py:93} INFO - [0m13:57:30                    - update the schema manually and re-run the process.
+[2023-12-30T13:57:30.340+0000] {subprocess.py:93} INFO - [0m13:57:30
+[2023-12-30T13:57:30.340+0000] {subprocess.py:93} INFO - [0m13:57:30                  Additional troubleshooting context:
+[2023-12-30T13:57:30.340+0000] {subprocess.py:93} INFO - [0m13:57:30                     Source columns not in target: []
+[2023-12-30T13:57:30.340+0000] {subprocess.py:93} INFO - [0m13:57:30                     Target columns not in source: []
+[2023-12-30T13:57:30.341+0000] {subprocess.py:93} INFO - [0m13:57:30                     New column types: [{'column_name': 'is_active', 'new_type': 'boolean'}]
+[2023-12-30T13:57:30.341+0000] {subprocess.py:93} INFO - [0m13:57:30
+[2023-12-30T13:57:30.341+0000] {subprocess.py:93} INFO - [0m13:57:30
+[2023-12-30T13:57:30.342+0000] {subprocess.py:93} INFO - [0m13:57:30    > in macro process_schema_changes (macros/materializations/models/incremental/on_schema_change.sql)
+[2023-12-30T13:57:30.342+0000] {subprocess.py:93} INFO - [0m13:57:30    > called by macro materialization_incremental_default (macros/materializations/models/incremental/incremental.sql)
+[2023-12-30T13:57:30.342+0000] {subprocess.py:93} INFO - [0m13:57:30    > called by model customer_information (models/silver/customer_information.sql)
+[2023-12-30T13:57:30.342+0000] {subprocess.py:93} INFO - [0m13:57:30
+[2023-12-30T13:57:30.343+0000] {subprocess.py:93} INFO - [0m13:57:30  Done. PASS=0 WARN=0 ERROR=3 SKIP=0 TOTAL=3
+[2023-12-30T13:57:31.210+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2023-12-30T13:57:31.220+0000] {taskinstance.py:1851} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/bash.py", line 197, in execute
+    f'Bash command failed. The command returned a non-zero exit code {result.exit_code}.'
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2023-12-30T13:57:31.223+0000] {taskinstance.py:1406} INFO - Marking task as UP_FOR_RETRY. dag_id=dbt_model, task_id=run_dbt_silver_models, execution_date=20220910T000000, start_date=20231230T135727, end_date=20231230T135731
+[2023-12-30T13:57:31.235+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 138 for task run_dbt_silver_models (Bash command failed. The command returned a non-zero exit code 1.; 15071)
+[2023-12-30T13:57:31.272+0000] {local_task_job.py:164} INFO - Task exited with return code 1
+[2023-12-30T13:57:31.305+0000] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

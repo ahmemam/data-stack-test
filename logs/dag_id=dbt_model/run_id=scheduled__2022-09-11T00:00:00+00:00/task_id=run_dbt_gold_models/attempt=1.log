@@ -1,0 +1,42 @@
+[2023-12-30T14:55:56.702+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dbt_model.run_dbt_gold_models scheduled__2022-09-11T00:00:00+00:00 [queued]>
+[2023-12-30T14:55:56.731+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dbt_model.run_dbt_gold_models scheduled__2022-09-11T00:00:00+00:00 [queued]>
+[2023-12-30T14:55:56.731+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2023-12-30T14:55:56.731+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 6
+[2023-12-30T14:55:56.731+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2023-12-30T14:55:56.754+0000] {taskinstance.py:1383} INFO - Executing <Task(BashOperator): run_dbt_gold_models> on 2022-09-11 00:00:00+00:00
+[2023-12-30T14:55:56.763+0000] {standard_task_runner.py:55} INFO - Started process 18091 to run task
+[2023-12-30T14:55:56.767+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'dbt_model', 'run_dbt_gold_models', 'scheduled__2022-09-11T00:00:00+00:00', '--job-id', '157', '--raw', '--subdir', 'DAGS_FOLDER/run_dbt._models.py', '--cfg-path', '/tmp/tmp68ia3ddk']
+[2023-12-30T14:55:56.767+0000] {standard_task_runner.py:83} INFO - Job 157: Subtask run_dbt_gold_models
+[2023-12-30T14:55:56.853+0000] {task_command.py:376} INFO - Running <TaskInstance: dbt_model.run_dbt_gold_models scheduled__2022-09-11T00:00:00+00:00 [running]> on host 683423f116e7
+[2023-12-30T14:55:56.928+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=alonso_md
+AIRFLOW_CTX_DAG_ID=dbt_model
+AIRFLOW_CTX_TASK_ID=run_dbt_gold_models
+AIRFLOW_CTX_EXECUTION_DATE=2022-09-11T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-09-11T00:00:00+00:00
+[2023-12-30T14:55:56.929+0000] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2023-12-30T14:55:56.930+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', "    dbt run     --profiles-dir //opt/***/dags/../dbt/     --project-dir ///opt/***/dags/../dbt//dwh     --target prod_*** --vars '{ target_date: 2022-09-11 }' --select gold"]
+[2023-12-30T14:55:56.939+0000] {subprocess.py:86} INFO - Output:
+[2023-12-30T14:55:58.839+0000] {subprocess.py:93} INFO - [0m14:55:58  Running with dbt=1.4.6
+[2023-12-30T14:55:58.950+0000] {subprocess.py:93} INFO - [0m14:55:58  Found 8 models, 15 tests, 0 snapshots, 0 analyses, 703 macros, 0 operations, 0 seed files, 3 sources, 0 exposures, 0 metrics
+[2023-12-30T14:55:58.951+0000] {subprocess.py:93} INFO - [0m14:55:58
+[2023-12-30T14:55:59.022+0000] {subprocess.py:93} INFO - [0m14:55:59  Concurrency: 4 threads (target='prod_***')
+[2023-12-30T14:55:59.022+0000] {subprocess.py:93} INFO - [0m14:55:59
+[2023-12-30T14:55:59.030+0000] {subprocess.py:93} INFO - [0m14:55:59  1 of 2 START sql incremental model gold.loan_transactions_w_drivers ............ [RUN]
+[2023-12-30T14:56:10.999+0000] {subprocess.py:93} INFO - [0m14:56:10  1 of 2 OK created sql incremental model gold.loan_transactions_w_drivers ....... [[32mINSERT 0 9440[0m in 11.97s]
+[2023-12-30T14:56:11.002+0000] {subprocess.py:93} INFO - [0m14:56:11  2 of 2 START sql incremental model gold.agg_loan_transactions .................. [RUN]
+[2023-12-30T14:56:11.092+0000] {subprocess.py:93} INFO - [0m14:56:11  2 of 2 OK created sql incremental model gold.agg_loan_transactions ............. [[32mINSERT 0 122[0m in 0.09s]
+[2023-12-30T14:56:11.178+0000] {subprocess.py:93} INFO - [0m14:56:11
+[2023-12-30T14:56:11.178+0000] {subprocess.py:93} INFO - [0m14:56:11  Finished running 2 incremental models in 0 hours 0 minutes and 12.23 seconds (12.23s).
+[2023-12-30T14:56:11.227+0000] {subprocess.py:93} INFO - [0m14:56:11
+[2023-12-30T14:56:11.228+0000] {subprocess.py:93} INFO - [0m14:56:11  [32mCompleted successfully[0m
+[2023-12-30T14:56:11.228+0000] {subprocess.py:93} INFO - [0m14:56:11
+[2023-12-30T14:56:11.228+0000] {subprocess.py:93} INFO - [0m14:56:11  Done. PASS=2 WARN=0 ERROR=0 SKIP=0 TOTAL=2
+[2023-12-30T14:56:12.196+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-12-30T14:56:12.219+0000] {taskinstance.py:1406} INFO - Marking task as SUCCESS. dag_id=dbt_model, task_id=run_dbt_gold_models, execution_date=20220911T000000, start_date=20231230T145556, end_date=20231230T145612
+[2023-12-30T14:56:12.261+0000] {local_task_job.py:164} INFO - Task exited with return code 0
+[2023-12-30T14:56:12.317+0000] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check

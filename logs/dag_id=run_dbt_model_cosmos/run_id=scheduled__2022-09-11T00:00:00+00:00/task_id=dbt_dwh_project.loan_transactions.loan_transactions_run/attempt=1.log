@@ -1,0 +1,48 @@
+[2023-12-30T15:22:46.527+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: run_dbt_model_cosmos.dbt_dwh_project.loan_transactions.loan_transactions_run scheduled__2022-09-11T00:00:00+00:00 [queued]>
+[2023-12-30T15:22:46.537+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: run_dbt_model_cosmos.dbt_dwh_project.loan_transactions.loan_transactions_run scheduled__2022-09-11T00:00:00+00:00 [queued]>
+[2023-12-30T15:22:46.537+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2023-12-30T15:22:46.537+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 6
+[2023-12-30T15:22:46.537+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2023-12-30T15:22:46.549+0000] {taskinstance.py:1383} INFO - Executing <Task(DbtRunLocalOperator): dbt_dwh_project.loan_transactions.loan_transactions_run> on 2022-09-11 00:00:00+00:00
+[2023-12-30T15:22:46.555+0000] {standard_task_runner.py:55} INFO - Started process 20230 to run task
+[2023-12-30T15:22:46.558+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'run_dbt_model_cosmos', 'dbt_dwh_project.loan_transactions.loan_transactions_run', 'scheduled__2022-09-11T00:00:00+00:00', '--job-id', '203', '--raw', '--subdir', 'DAGS_FOLDER/run_dbt_models_cosmos.py', '--cfg-path', '/tmp/tmp17ibiym6']
+[2023-12-30T15:22:46.558+0000] {standard_task_runner.py:83} INFO - Job 203: Subtask dbt_dwh_project.loan_transactions.loan_transactions_run
+[2023-12-30T15:22:46.608+0000] {task_command.py:376} INFO - Running <TaskInstance: run_dbt_model_cosmos.dbt_dwh_project.loan_transactions.loan_transactions_run scheduled__2022-09-11T00:00:00+00:00 [running]> on host 683423f116e7
+[2023-12-30T15:22:46.664+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=alonso_md
+AIRFLOW_CTX_DAG_ID=run_dbt_model_cosmos
+AIRFLOW_CTX_TASK_ID=dbt_dwh_project.loan_transactions.loan_transactions_run
+AIRFLOW_CTX_EXECUTION_DATE=2022-09-11T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-09-11T00:00:00+00:00
+[2023-12-30T15:22:46.671+0000] {base.py:71} INFO - Using connection ID 'postgres_default' for task execution.
+[2023-12-30T15:22:46.672+0000] {local.py:136} INFO - Cloning project to writable temp directory /tmp/tmpfks8l4nm from //opt/airflow/dags/../dbt/dwh
+[2023-12-30T15:22:46.711+0000] {local.py:157} INFO - Trying to run the command:
+ ['dbt', 'run', '--vars', '{"target_date": "2022-09-11"}', '--models', 'loan_transactions', '--profile', 'postgres_profile']
+From /tmp/tmpfks8l4nm/dbt_project
+[2023-12-30T15:22:46.711+0000] {adapted_subprocesshook.py:53} INFO - Tmp dir root location: 
+ /tmp
+[2023-12-30T15:22:46.712+0000] {adapted_subprocesshook.py:66} INFO - Running command: ['dbt', 'run', '--vars', '{"target_date": "2022-09-11"}', '--models', 'loan_transactions', '--profile', 'postgres_profile']
+[2023-12-30T15:22:46.722+0000] {adapted_subprocesshook.py:77} INFO - Output:
+[2023-12-30T15:22:48.717+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:48  Running with dbt=1.4.6
+[2023-12-30T15:22:48.781+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:48  Unable to do partial parsing because config vars, config profile, or config target have changed
+[2023-12-30T15:22:48.781+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:48  Unable to do partial parsing because profile has changed
+[2023-12-30T15:22:48.782+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:48  Unable to do partial parsing because env vars used in profiles.yml have changed
+[2023-12-30T15:22:50.527+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:50  Found 8 models, 15 tests, 0 snapshots, 0 analyses, 703 macros, 0 operations, 0 seed files, 3 sources, 0 exposures, 0 metrics
+[2023-12-30T15:22:50.529+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:50
+[2023-12-30T15:22:50.677+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:50  Concurrency: 1 threads (target='dev')
+[2023-12-30T15:22:50.677+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:50
+[2023-12-30T15:22:50.684+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:50  1 of 1 START sql incremental model silver.loan_transactions .................... [RUN]
+[2023-12-30T15:22:50.915+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:50  1 of 1 OK created sql incremental model silver.loan_transactions ............... [[32mINSERT 0 9440[0m in 0.23s]
+[2023-12-30T15:22:51.001+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:51
+[2023-12-30T15:22:51.002+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:51  Finished running 1 incremental model in 0 hours 0 minutes and 0.47 seconds (0.47s).
+[2023-12-30T15:22:51.015+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:51
+[2023-12-30T15:22:51.016+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:51  [32mCompleted successfully[0m
+[2023-12-30T15:22:51.016+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:51
+[2023-12-30T15:22:51.016+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:51  Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[2023-12-30T15:22:51.876+0000] {adapted_subprocesshook.py:91} INFO - Command exited with return code 0
+[2023-12-30T15:22:51.931+0000] {taskinstance.py:1406} INFO - Marking task as SUCCESS. dag_id=run_dbt_model_cosmos, task_id=dbt_***_project.loan_transactions.loan_transactions_run, execution_date=20220911T000000, start_date=20231230T152246, end_date=20231230T152251
+[2023-12-30T15:22:51.984+0000] {local_task_job.py:164} INFO - Task exited with return code 0
+[2023-12-30T15:22:52.058+0000] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check

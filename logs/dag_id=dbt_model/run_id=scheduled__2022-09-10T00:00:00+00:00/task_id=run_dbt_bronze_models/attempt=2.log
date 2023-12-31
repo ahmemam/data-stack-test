@@ -1,0 +1,205 @@
+[2023-12-30T09:20:59.611+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dbt_model.run_dbt_bronze_models scheduled__2022-09-10T00:00:00+00:00 [queued]>
+[2023-12-30T09:20:59.620+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dbt_model.run_dbt_bronze_models scheduled__2022-09-10T00:00:00+00:00 [queued]>
+[2023-12-30T09:20:59.620+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2023-12-30T09:20:59.620+0000] {taskinstance.py:1363} INFO - Starting attempt 2 of 6
+[2023-12-30T09:20:59.620+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2023-12-30T09:20:59.631+0000] {taskinstance.py:1383} INFO - Executing <Task(BashOperator): run_dbt_bronze_models> on 2022-09-10 00:00:00+00:00
+[2023-12-30T09:20:59.636+0000] {standard_task_runner.py:55} INFO - Started process 957 to run task
+[2023-12-30T09:20:59.639+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'dbt_model', 'run_dbt_bronze_models', 'scheduled__2022-09-10T00:00:00+00:00', '--job-id', '110', '--raw', '--subdir', 'DAGS_FOLDER/run_dbt._models.py', '--cfg-path', '/tmp/tmpr0r4ky3v']
+[2023-12-30T09:20:59.639+0000] {standard_task_runner.py:83} INFO - Job 110: Subtask run_dbt_bronze_models
+[2023-12-30T09:20:59.683+0000] {task_command.py:376} INFO - Running <TaskInstance: dbt_model.run_dbt_bronze_models scheduled__2022-09-10T00:00:00+00:00 [running]> on host 683423f116e7
+[2023-12-30T09:20:59.731+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=alonso_md
+AIRFLOW_CTX_DAG_ID=dbt_model
+AIRFLOW_CTX_TASK_ID=run_dbt_bronze_models
+AIRFLOW_CTX_EXECUTION_DATE=2022-09-10T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=2
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-09-10T00:00:00+00:00
+[2023-12-30T09:20:59.731+0000] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2023-12-30T09:20:59.732+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', "    dbt run     --profiles-dir //opt/***/dags/../dbt/     --project-dir ///opt/***/dags/../dbt//dwh     --target prod_*** --vars '{ target_date: 2022-09-10 }' --select bronze"]
+[2023-12-30T09:20:59.740+0000] {subprocess.py:86} INFO - Output:
+[2023-12-30T09:21:01.445+0000] {subprocess.py:93} INFO - [0m09:21:01  Running with dbt=1.4.6
+[2023-12-30T09:21:01.493+0000] {subprocess.py:93} INFO - [0m09:21:01  Unable to do partial parsing because config vars, config profile, or config target have changed
+[2023-12-30T09:21:02.894+0000] {subprocess.py:93} INFO - [0m09:21:02  Found 8 models, 15 tests, 0 snapshots, 0 analyses, 703 macros, 0 operations, 0 seed files, 3 sources, 0 exposures, 0 metrics
+[2023-12-30T09:21:02.895+0000] {subprocess.py:93} INFO - [0m09:21:02
+[2023-12-30T09:21:03.003+0000] {subprocess.py:93} INFO - [0m09:21:03  Concurrency: 4 threads (target='prod_***')
+[2023-12-30T09:21:03.003+0000] {subprocess.py:93} INFO - [0m09:21:03
+[2023-12-30T09:21:03.009+0000] {subprocess.py:93} INFO - [0m09:21:03  1 of 3 START sql view model bronze.raw_daily_customer_cdc ...................... [RUN]
+[2023-12-30T09:21:03.015+0000] {subprocess.py:93} INFO - [0m09:21:03  2 of 3 START sql view model bronze.raw_daily_customer_drivers .................. [RUN]
+[2023-12-30T09:21:03.027+0000] {subprocess.py:93} INFO - [0m09:21:03  3 of 3 START sql view model bronze.raw_daily_loan_transactions ................. [RUN]
+[2023-12-30T09:21:03.081+0000] {subprocess.py:93} INFO - [0m09:21:03  1 of 3 ERROR creating sql view model bronze.raw_daily_customer_cdc ............. [[31mERROR[0m in 0.07s]
+[2023-12-30T09:21:03.089+0000] {subprocess.py:93} INFO - [0m09:21:03  2 of 3 ERROR creating sql view model bronze.raw_daily_customer_drivers ......... [[31mERROR[0m in 0.06s]
+[2023-12-30T09:21:03.091+0000] {subprocess.py:93} INFO - [0m09:21:03  3 of 3 ERROR creating sql view model bronze.raw_daily_loan_transactions ........ [[31mERROR[0m in 0.05s]
+[2023-12-30T09:21:03.117+0000] {subprocess.py:93} INFO - [0m09:21:03
+[2023-12-30T09:21:03.118+0000] {subprocess.py:93} INFO - [0m09:21:03  Finished running 3 view models in 0 hours 0 minutes and 0.22 seconds (0.22s).
+[2023-12-30T09:21:03.128+0000] {subprocess.py:93} INFO - [0m09:21:03
+[2023-12-30T09:21:03.128+0000] {subprocess.py:93} INFO - [0m09:21:03  [31mCompleted with 3 errors and 0 warnings:[0m
+[2023-12-30T09:21:03.128+0000] {subprocess.py:93} INFO - [0m09:21:03
+[2023-12-30T09:21:03.129+0000] {subprocess.py:93} INFO - [0m09:21:03  [33mDatabase Error in model raw_daily_customer_cdc (models/bronze/raw_daily_customer_cdc.sql)[0m
+[2023-12-30T09:21:03.129+0000] {subprocess.py:93} INFO - [0m09:21:03    relation "airbyte.daily_customer_information_cdc" does not exist
+[2023-12-30T09:21:03.129+0000] {subprocess.py:93} INFO - [0m09:21:03    LINE 9:     FROM "dwh"."airbyte"."daily_customer_information_cdc"
+[2023-12-30T09:21:03.129+0000] {subprocess.py:93} INFO - [0m09:21:03                     ^
+[2023-12-30T09:21:03.130+0000] {subprocess.py:93} INFO - [0m09:21:03    compiled Code at target/run/dwh/models/bronze/raw_daily_customer_cdc.sql
+[2023-12-30T09:21:03.130+0000] {subprocess.py:93} INFO - [0m09:21:03
+[2023-12-30T09:21:03.130+0000] {subprocess.py:93} INFO - [0m09:21:03  [33mDatabase Error in model raw_daily_customer_drivers (models/bronze/raw_daily_customer_drivers.sql)[0m
+[2023-12-30T09:21:03.130+0000] {subprocess.py:93} INFO - [0m09:21:03    relation "airbyte.daily_customer_drivers" does not exist
+[2023-12-30T09:21:03.131+0000] {subprocess.py:93} INFO - [0m09:21:03    LINE 9:     FROM "dwh"."airbyte"."daily_customer_drivers"
+[2023-12-30T09:21:03.131+0000] {subprocess.py:93} INFO - [0m09:21:03                     ^
+[2023-12-30T09:21:03.131+0000] {subprocess.py:93} INFO - [0m09:21:03    compiled Code at target/run/dwh/models/bronze/raw_daily_customer_drivers.sql
+[2023-12-30T09:21:03.131+0000] {subprocess.py:93} INFO - [0m09:21:03
+[2023-12-30T09:21:03.132+0000] {subprocess.py:93} INFO - [0m09:21:03  [33mDatabase Error in model raw_daily_loan_transactions (models/bronze/raw_daily_loan_transactions.sql)[0m
+[2023-12-30T09:21:03.132+0000] {subprocess.py:93} INFO - [0m09:21:03    relation "airbyte.daily_loan_transactions" does not exist
+[2023-12-30T09:21:03.132+0000] {subprocess.py:93} INFO - [0m09:21:03    LINE 9:     FROM "dwh"."airbyte"."daily_loan_transactions"
+[2023-12-30T09:21:03.132+0000] {subprocess.py:93} INFO - [0m09:21:03                     ^
+[2023-12-30T09:21:03.133+0000] {subprocess.py:93} INFO - [0m09:21:03    compiled Code at target/run/dwh/models/bronze/raw_daily_loan_transactions.sql
+[2023-12-30T09:21:03.133+0000] {subprocess.py:93} INFO - [0m09:21:03
+[2023-12-30T09:21:03.133+0000] {subprocess.py:93} INFO - [0m09:21:03  Done. PASS=0 WARN=0 ERROR=3 SKIP=0 TOTAL=3
+[2023-12-30T09:21:04.051+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2023-12-30T09:21:04.059+0000] {taskinstance.py:1851} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/bash.py", line 197, in execute
+    f'Bash command failed. The command returned a non-zero exit code {result.exit_code}.'
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2023-12-30T09:21:04.061+0000] {taskinstance.py:1406} INFO - Marking task as UP_FOR_RETRY. dag_id=dbt_model, task_id=run_dbt_bronze_models, execution_date=20220910T000000, start_date=20231230T092059, end_date=20231230T092104
+[2023-12-30T09:21:04.073+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 110 for task run_dbt_bronze_models (Bash command failed. The command returned a non-zero exit code 1.; 957)
+[2023-12-30T09:21:04.107+0000] {local_task_job.py:164} INFO - Task exited with return code 1
+[2023-12-30T09:21:04.144+0000] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2023-12-30T09:56:23.882+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dbt_model.run_dbt_bronze_models scheduled__2022-09-10T00:00:00+00:00 [queued]>
+[2023-12-30T09:56:23.890+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dbt_model.run_dbt_bronze_models scheduled__2022-09-10T00:00:00+00:00 [queued]>
+[2023-12-30T09:56:23.891+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2023-12-30T09:56:23.891+0000] {taskinstance.py:1363} INFO - Starting attempt 2 of 6
+[2023-12-30T09:56:23.891+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2023-12-30T09:56:23.903+0000] {taskinstance.py:1383} INFO - Executing <Task(BashOperator): run_dbt_bronze_models> on 2022-09-10 00:00:00+00:00
+[2023-12-30T09:56:23.907+0000] {standard_task_runner.py:55} INFO - Started process 2743 to run task
+[2023-12-30T09:56:23.910+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'dbt_model', 'run_dbt_bronze_models', 'scheduled__2022-09-10T00:00:00+00:00', '--job-id', '114', '--raw', '--subdir', 'DAGS_FOLDER/run_dbt._models.py', '--cfg-path', '/tmp/tmp50ibwumr']
+[2023-12-30T09:56:23.910+0000] {standard_task_runner.py:83} INFO - Job 114: Subtask run_dbt_bronze_models
+[2023-12-30T09:56:23.954+0000] {task_command.py:376} INFO - Running <TaskInstance: dbt_model.run_dbt_bronze_models scheduled__2022-09-10T00:00:00+00:00 [running]> on host 683423f116e7
+[2023-12-30T09:56:24.002+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=alonso_md
+AIRFLOW_CTX_DAG_ID=dbt_model
+AIRFLOW_CTX_TASK_ID=run_dbt_bronze_models
+AIRFLOW_CTX_EXECUTION_DATE=2022-09-10T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=2
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-09-10T00:00:00+00:00
+[2023-12-30T09:56:24.003+0000] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2023-12-30T09:56:24.004+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', "    dbt run     --profiles-dir //opt/***/dags/../dbt/     --project-dir ///opt/***/dags/../dbt//dwh     --target prod_*** --vars '{ target_date: 2022-09-10 }' --select bronze"]
+[2023-12-30T09:56:24.016+0000] {subprocess.py:86} INFO - Output:
+[2023-12-30T09:56:25.684+0000] {subprocess.py:93} INFO - [0m09:56:25  Running with dbt=1.4.6
+[2023-12-30T09:56:25.786+0000] {subprocess.py:93} INFO - [0m09:56:25  Found 8 models, 15 tests, 0 snapshots, 0 analyses, 703 macros, 0 operations, 0 seed files, 3 sources, 0 exposures, 0 metrics
+[2023-12-30T09:56:25.789+0000] {subprocess.py:93} INFO - [0m09:56:25
+[2023-12-30T09:56:25.865+0000] {subprocess.py:93} INFO - [0m09:56:25  Concurrency: 4 threads (target='prod_***')
+[2023-12-30T09:56:25.866+0000] {subprocess.py:93} INFO - [0m09:56:25
+[2023-12-30T09:56:25.873+0000] {subprocess.py:93} INFO - [0m09:56:25  1 of 3 START sql view model bronze.raw_daily_customer_cdc ...................... [RUN]
+[2023-12-30T09:56:25.879+0000] {subprocess.py:93} INFO - [0m09:56:25  2 of 3 START sql view model bronze.raw_daily_customer_drivers .................. [RUN]
+[2023-12-30T09:56:25.898+0000] {subprocess.py:93} INFO - [0m09:56:25  3 of 3 START sql view model bronze.raw_daily_loan_transactions ................. [RUN]
+[2023-12-30T09:56:25.958+0000] {subprocess.py:93} INFO - [0m09:56:25  1 of 3 ERROR creating sql view model bronze.raw_daily_customer_cdc ............. [[31mERROR[0m in 0.08s]
+[2023-12-30T09:56:25.963+0000] {subprocess.py:93} INFO - [0m09:56:25  3 of 3 ERROR creating sql view model bronze.raw_daily_loan_transactions ........ [[31mERROR[0m in 0.04s]
+[2023-12-30T09:56:25.963+0000] {subprocess.py:93} INFO - [0m09:56:25  2 of 3 ERROR creating sql view model bronze.raw_daily_customer_drivers ......... [[31mERROR[0m in 0.07s]
+[2023-12-30T09:56:25.980+0000] {subprocess.py:93} INFO - [0m09:56:25
+[2023-12-30T09:56:25.981+0000] {subprocess.py:93} INFO - [0m09:56:25  Finished running 3 view models in 0 hours 0 minutes and 0.19 seconds (0.19s).
+[2023-12-30T09:56:25.991+0000] {subprocess.py:93} INFO - [0m09:56:25
+[2023-12-30T09:56:25.992+0000] {subprocess.py:93} INFO - [0m09:56:25  [31mCompleted with 3 errors and 0 warnings:[0m
+[2023-12-30T09:56:25.992+0000] {subprocess.py:93} INFO - [0m09:56:25
+[2023-12-30T09:56:25.992+0000] {subprocess.py:93} INFO - [0m09:56:25  [33mDatabase Error in model raw_daily_customer_cdc (models/bronze/raw_daily_customer_cdc.sql)[0m
+[2023-12-30T09:56:25.993+0000] {subprocess.py:93} INFO - [0m09:56:25    column "date" does not exist
+[2023-12-30T09:56:25.993+0000] {subprocess.py:93} INFO - [0m09:56:25    LINE 12:     cast(date as date) as date,
+[2023-12-30T09:56:25.993+0000] {subprocess.py:93} INFO - [0m09:56:25                      ^
+[2023-12-30T09:56:25.993+0000] {subprocess.py:93} INFO - [0m09:56:25    HINT:  Perhaps you meant to reference the column "raw_daily_customer_cdc.﻿date".
+[2023-12-30T09:56:25.994+0000] {subprocess.py:93} INFO - [0m09:56:25    compiled Code at target/run/dwh/models/bronze/raw_daily_customer_cdc.sql
+[2023-12-30T09:56:25.994+0000] {subprocess.py:93} INFO - [0m09:56:25
+[2023-12-30T09:56:25.994+0000] {subprocess.py:93} INFO - [0m09:56:25  [33mDatabase Error in model raw_daily_loan_transactions (models/bronze/raw_daily_loan_transactions.sql)[0m
+[2023-12-30T09:56:25.994+0000] {subprocess.py:93} INFO - [0m09:56:25    column "date" does not exist
+[2023-12-30T09:56:25.995+0000] {subprocess.py:93} INFO - [0m09:56:25    LINE 12:     cast(date as date) as date,
+[2023-12-30T09:56:25.995+0000] {subprocess.py:93} INFO - [0m09:56:25                      ^
+[2023-12-30T09:56:25.995+0000] {subprocess.py:93} INFO - [0m09:56:25    HINT:  Perhaps you meant to reference the column "raw_daily_loan_transactions.﻿date".
+[2023-12-30T09:56:25.995+0000] {subprocess.py:93} INFO - [0m09:56:25    compiled Code at target/run/dwh/models/bronze/raw_daily_loan_transactions.sql
+[2023-12-30T09:56:25.996+0000] {subprocess.py:93} INFO - [0m09:56:25
+[2023-12-30T09:56:25.996+0000] {subprocess.py:93} INFO - [0m09:56:25  [33mDatabase Error in model raw_daily_customer_drivers (models/bronze/raw_daily_customer_drivers.sql)[0m
+[2023-12-30T09:56:25.996+0000] {subprocess.py:93} INFO - [0m09:56:25    column "date" does not exist
+[2023-12-30T09:56:25.996+0000] {subprocess.py:93} INFO - [0m09:56:25    LINE 12:     cast(date as date) as date,
+[2023-12-30T09:56:25.997+0000] {subprocess.py:93} INFO - [0m09:56:25                      ^
+[2023-12-30T09:56:25.997+0000] {subprocess.py:93} INFO - [0m09:56:25    HINT:  Perhaps you meant to reference the column "raw_daily_customer_drivers.﻿date".
+[2023-12-30T09:56:25.997+0000] {subprocess.py:93} INFO - [0m09:56:25    compiled Code at target/run/dwh/models/bronze/raw_daily_customer_drivers.sql
+[2023-12-30T09:56:25.998+0000] {subprocess.py:93} INFO - [0m09:56:25
+[2023-12-30T09:56:25.998+0000] {subprocess.py:93} INFO - [0m09:56:25  Done. PASS=0 WARN=0 ERROR=3 SKIP=0 TOTAL=3
+[2023-12-30T09:56:26.997+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2023-12-30T09:56:27.005+0000] {taskinstance.py:1851} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/bash.py", line 197, in execute
+    f'Bash command failed. The command returned a non-zero exit code {result.exit_code}.'
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2023-12-30T09:56:27.007+0000] {taskinstance.py:1406} INFO - Marking task as UP_FOR_RETRY. dag_id=dbt_model, task_id=run_dbt_bronze_models, execution_date=20220910T000000, start_date=20231230T095623, end_date=20231230T095627
+[2023-12-30T09:56:27.020+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 114 for task run_dbt_bronze_models (Bash command failed. The command returned a non-zero exit code 1.; 2743)
+[2023-12-30T09:56:27.056+0000] {local_task_job.py:164} INFO - Task exited with return code 1
+[2023-12-30T09:56:27.094+0000] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2023-12-30T10:35:59.817+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dbt_model.run_dbt_bronze_models scheduled__2022-09-10T00:00:00+00:00 [queued]>
+[2023-12-30T10:35:59.825+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dbt_model.run_dbt_bronze_models scheduled__2022-09-10T00:00:00+00:00 [queued]>
+[2023-12-30T10:35:59.825+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2023-12-30T10:35:59.825+0000] {taskinstance.py:1363} INFO - Starting attempt 2 of 6
+[2023-12-30T10:35:59.825+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2023-12-30T10:35:59.836+0000] {taskinstance.py:1383} INFO - Executing <Task(BashOperator): run_dbt_bronze_models> on 2022-09-10 00:00:00+00:00
+[2023-12-30T10:35:59.839+0000] {standard_task_runner.py:55} INFO - Started process 4780 to run task
+[2023-12-30T10:35:59.842+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'dbt_model', 'run_dbt_bronze_models', 'scheduled__2022-09-10T00:00:00+00:00', '--job-id', '118', '--raw', '--subdir', 'DAGS_FOLDER/run_dbt._models.py', '--cfg-path', '/tmp/tmpp5kz5n8a']
+[2023-12-30T10:35:59.842+0000] {standard_task_runner.py:83} INFO - Job 118: Subtask run_dbt_bronze_models
+[2023-12-30T10:35:59.882+0000] {task_command.py:376} INFO - Running <TaskInstance: dbt_model.run_dbt_bronze_models scheduled__2022-09-10T00:00:00+00:00 [running]> on host 683423f116e7
+[2023-12-30T10:35:59.925+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=alonso_md
+AIRFLOW_CTX_DAG_ID=dbt_model
+AIRFLOW_CTX_TASK_ID=run_dbt_bronze_models
+AIRFLOW_CTX_EXECUTION_DATE=2022-09-10T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=2
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-09-10T00:00:00+00:00
+[2023-12-30T10:35:59.926+0000] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2023-12-30T10:35:59.927+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', "    dbt run     --profiles-dir //opt/***/dags/../dbt/     --project-dir ///opt/***/dags/../dbt//dwh     --target prod_*** --vars '{ target_date: 2022-09-10 }' --select bronze"]
+[2023-12-30T10:35:59.934+0000] {subprocess.py:86} INFO - Output:
+[2023-12-30T10:36:01.612+0000] {subprocess.py:93} INFO - [0m10:36:01  Running with dbt=1.4.6
+[2023-12-30T10:36:01.677+0000] {subprocess.py:93} INFO - [0m10:36:01  Unable to do partial parsing because config vars, config profile, or config target have changed
+[2023-12-30T10:36:03.145+0000] {subprocess.py:93} INFO - [0m10:36:03  Found 8 models, 15 tests, 0 snapshots, 0 analyses, 703 macros, 0 operations, 0 seed files, 3 sources, 0 exposures, 0 metrics
+[2023-12-30T10:36:03.146+0000] {subprocess.py:93} INFO - [0m10:36:03
+[2023-12-30T10:36:03.244+0000] {subprocess.py:93} INFO - [0m10:36:03  Concurrency: 4 threads (target='prod_***')
+[2023-12-30T10:36:03.244+0000] {subprocess.py:93} INFO - [0m10:36:03
+[2023-12-30T10:36:03.249+0000] {subprocess.py:93} INFO - [0m10:36:03  1 of 3 START sql view model bronze.raw_daily_customer_cdc ...................... [RUN]
+[2023-12-30T10:36:03.250+0000] {subprocess.py:93} INFO - [0m10:36:03  2 of 3 START sql view model bronze.raw_daily_customer_drivers .................. [RUN]
+[2023-12-30T10:36:03.251+0000] {subprocess.py:93} INFO - [0m10:36:03  3 of 3 START sql view model bronze.raw_daily_loan_transactions ................. [RUN]
+[2023-12-30T10:36:03.371+0000] {subprocess.py:93} INFO - [0m10:36:03  2 of 3 ERROR creating sql view model bronze.raw_daily_customer_drivers ......... [[31mERROR[0m in 0.12s]
+[2023-12-30T10:36:03.372+0000] {subprocess.py:93} INFO - [0m10:36:03  3 of 3 ERROR creating sql view model bronze.raw_daily_loan_transactions ........ [[31mERROR[0m in 0.12s]
+[2023-12-30T10:36:03.376+0000] {subprocess.py:93} INFO - [0m10:36:03  1 of 3 OK created sql view model bronze.raw_daily_customer_cdc ................. [[32mCREATE VIEW[0m in 0.13s]
+[2023-12-30T10:36:03.469+0000] {subprocess.py:93} INFO - [0m10:36:03
+[2023-12-30T10:36:03.469+0000] {subprocess.py:93} INFO - [0m10:36:03  Finished running 3 view models in 0 hours 0 minutes and 0.32 seconds (0.32s).
+[2023-12-30T10:36:03.480+0000] {subprocess.py:93} INFO - [0m10:36:03
+[2023-12-30T10:36:03.481+0000] {subprocess.py:93} INFO - [0m10:36:03  [31mCompleted with 2 errors and 0 warnings:[0m
+[2023-12-30T10:36:03.481+0000] {subprocess.py:93} INFO - [0m10:36:03
+[2023-12-30T10:36:03.481+0000] {subprocess.py:93} INFO - [0m10:36:03  [33mDatabase Error in model raw_daily_customer_drivers (models/bronze/raw_daily_customer_drivers.sql)[0m
+[2023-12-30T10:36:03.482+0000] {subprocess.py:93} INFO - [0m10:36:03    column "date" does not exist
+[2023-12-30T10:36:03.482+0000] {subprocess.py:93} INFO - [0m10:36:03    LINE 12:     cast(date as date) as date,
+[2023-12-30T10:36:03.483+0000] {subprocess.py:93} INFO - [0m10:36:03                      ^
+[2023-12-30T10:36:03.483+0000] {subprocess.py:93} INFO - [0m10:36:03    HINT:  Perhaps you meant to reference the column "raw_daily_customer_drivers.﻿date".
+[2023-12-30T10:36:03.483+0000] {subprocess.py:93} INFO - [0m10:36:03    compiled Code at target/run/dwh/models/bronze/raw_daily_customer_drivers.sql
+[2023-12-30T10:36:03.483+0000] {subprocess.py:93} INFO - [0m10:36:03
+[2023-12-30T10:36:03.484+0000] {subprocess.py:93} INFO - [0m10:36:03  [33mDatabase Error in model raw_daily_loan_transactions (models/bronze/raw_daily_loan_transactions.sql)[0m
+[2023-12-30T10:36:03.484+0000] {subprocess.py:93} INFO - [0m10:36:03    column "date" does not exist
+[2023-12-30T10:36:03.484+0000] {subprocess.py:93} INFO - [0m10:36:03    LINE 12:     cast(date as date) as date,
+[2023-12-30T10:36:03.485+0000] {subprocess.py:93} INFO - [0m10:36:03                      ^
+[2023-12-30T10:36:03.485+0000] {subprocess.py:93} INFO - [0m10:36:03    HINT:  Perhaps you meant to reference the column "raw_daily_loan_transactions.﻿date".
+[2023-12-30T10:36:03.485+0000] {subprocess.py:93} INFO - [0m10:36:03    compiled Code at target/run/dwh/models/bronze/raw_daily_loan_transactions.sql
+[2023-12-30T10:36:03.485+0000] {subprocess.py:93} INFO - [0m10:36:03
+[2023-12-30T10:36:03.486+0000] {subprocess.py:93} INFO - [0m10:36:03  Done. PASS=1 WARN=0 ERROR=2 SKIP=0 TOTAL=3
+[2023-12-30T10:36:04.991+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2023-12-30T10:36:04.999+0000] {taskinstance.py:1851} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/bash.py", line 197, in execute
+    f'Bash command failed. The command returned a non-zero exit code {result.exit_code}.'
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2023-12-30T10:36:05.002+0000] {taskinstance.py:1406} INFO - Marking task as UP_FOR_RETRY. dag_id=dbt_model, task_id=run_dbt_bronze_models, execution_date=20220910T000000, start_date=20231230T103559, end_date=20231230T103605
+[2023-12-30T10:36:05.012+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 118 for task run_dbt_bronze_models (Bash command failed. The command returned a non-zero exit code 1.; 4780)
+[2023-12-30T10:36:05.031+0000] {local_task_job.py:164} INFO - Task exited with return code 1
+[2023-12-30T10:36:05.059+0000] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

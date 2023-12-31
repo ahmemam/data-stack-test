@@ -1,0 +1,57 @@
+[2023-12-30T15:21:56.664+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: run_dbt_model_cosmos.dbt_dwh_project.customer_information.customer_information_test scheduled__2022-09-10T00:00:00+00:00 [queued]>
+[2023-12-30T15:21:56.674+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: run_dbt_model_cosmos.dbt_dwh_project.customer_information.customer_information_test scheduled__2022-09-10T00:00:00+00:00 [queued]>
+[2023-12-30T15:21:56.674+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2023-12-30T15:21:56.674+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 6
+[2023-12-30T15:21:56.674+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2023-12-30T15:21:56.699+0000] {taskinstance.py:1383} INFO - Executing <Task(DbtTestLocalOperator): dbt_dwh_project.customer_information.customer_information_test> on 2022-09-10 00:00:00+00:00
+[2023-12-30T15:21:56.704+0000] {standard_task_runner.py:55} INFO - Started process 19790 to run task
+[2023-12-30T15:21:56.708+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'run_dbt_model_cosmos', 'dbt_dwh_project.customer_information.customer_information_test', 'scheduled__2022-09-10T00:00:00+00:00', '--job-id', '189', '--raw', '--subdir', 'DAGS_FOLDER/run_dbt_models_cosmos.py', '--cfg-path', '/tmp/tmp6w7wa0h8']
+[2023-12-30T15:21:56.708+0000] {standard_task_runner.py:83} INFO - Job 189: Subtask dbt_dwh_project.customer_information.customer_information_test
+[2023-12-30T15:21:56.770+0000] {task_command.py:376} INFO - Running <TaskInstance: run_dbt_model_cosmos.dbt_dwh_project.customer_information.customer_information_test scheduled__2022-09-10T00:00:00+00:00 [running]> on host 683423f116e7
+[2023-12-30T15:21:56.835+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=alonso_md
+AIRFLOW_CTX_DAG_ID=run_dbt_model_cosmos
+AIRFLOW_CTX_TASK_ID=dbt_dwh_project.customer_information.customer_information_test
+AIRFLOW_CTX_EXECUTION_DATE=2022-09-10T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-09-10T00:00:00+00:00
+[2023-12-30T15:21:56.843+0000] {base.py:71} INFO - Using connection ID 'postgres_default' for task execution.
+[2023-12-30T15:21:56.845+0000] {local.py:136} INFO - Cloning project to writable temp directory /tmp/tmp6ch0560s from //opt/airflow/dags/../dbt/dwh
+[2023-12-30T15:21:56.916+0000] {local.py:157} INFO - Trying to run the command:
+ ['dbt', 'test', '--vars', '{"target_date": "2022-09-10"}', '--models', 'customer_information', '--profile', 'postgres_profile']
+From /tmp/tmp6ch0560s/dbt_project
+[2023-12-30T15:21:56.917+0000] {adapted_subprocesshook.py:53} INFO - Tmp dir root location: 
+ /tmp
+[2023-12-30T15:21:56.917+0000] {adapted_subprocesshook.py:66} INFO - Running command: ['dbt', 'test', '--vars', '{"target_date": "2022-09-10"}', '--models', 'customer_information', '--profile', 'postgres_profile']
+[2023-12-30T15:21:56.927+0000] {adapted_subprocesshook.py:77} INFO - Output:
+[2023-12-30T15:21:58.915+0000] {adapted_subprocesshook.py:87} INFO - [0m15:21:58  Running with dbt=1.4.6
+[2023-12-30T15:21:58.972+0000] {adapted_subprocesshook.py:87} INFO - [0m15:21:58  Unable to do partial parsing because config vars, config profile, or config target have changed
+[2023-12-30T15:21:58.973+0000] {adapted_subprocesshook.py:87} INFO - [0m15:21:58  Unable to do partial parsing because profile has changed
+[2023-12-30T15:21:58.973+0000] {adapted_subprocesshook.py:87} INFO - [0m15:21:58  Unable to do partial parsing because env vars used in profiles.yml have changed
+[2023-12-30T15:22:00.557+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:00  Found 8 models, 15 tests, 0 snapshots, 0 analyses, 703 macros, 0 operations, 0 seed files, 3 sources, 0 exposures, 0 metrics
+[2023-12-30T15:22:00.558+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:00
+[2023-12-30T15:22:00.665+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:00  Concurrency: 1 threads (target='dev')
+[2023-12-30T15:22:00.665+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:00
+[2023-12-30T15:22:00.670+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:00  1 of 4 START test not_null_customer_information_customerId ..................... [RUN]
+[2023-12-30T15:22:00.707+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:00  1 of 4 PASS not_null_customer_information_customerId ........................... [[32mPASS[0m in 0.04s]
+[2023-12-30T15:22:00.709+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:00  2 of 4 START test not_null_customer_information_firstName ...................... [RUN]
+[2023-12-30T15:22:00.727+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:00  2 of 4 PASS not_null_customer_information_firstName ............................ [[32mPASS[0m in 0.02s]
+[2023-12-30T15:22:00.728+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:00  3 of 4 START test not_null_customer_information_lastName ....................... [RUN]
+[2023-12-30T15:22:00.748+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:00  3 of 4 PASS not_null_customer_information_lastName ............................. [[32mPASS[0m in 0.02s]
+[2023-12-30T15:22:00.749+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:00  4 of 4 START test unique_customer_information_customerId ....................... [RUN]
+[2023-12-30T15:22:00.782+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:00  4 of 4 PASS unique_customer_information_customerId ............................. [[32mPASS[0m in 0.03s]
+[2023-12-30T15:22:00.883+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:00
+[2023-12-30T15:22:00.883+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:00  Finished running 4 tests in 0 hours 0 minutes and 0.32 seconds (0.32s).
+[2023-12-30T15:22:00.896+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:00
+[2023-12-30T15:22:00.896+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:00  [32mCompleted successfully[0m
+[2023-12-30T15:22:00.897+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:00
+[2023-12-30T15:22:00.897+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:00  Done. PASS=4 WARN=0 ERROR=0 SKIP=0 TOTAL=4
+[2023-12-30T15:22:01.724+0000] {adapted_subprocesshook.py:91} INFO - Command exited with return code 0
+[2023-12-30T15:22:01.761+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/models/baseoperator.py:1390: RemovedInAirflow3Warning: Passing 'execution_date' to 'TaskInstance.xcom_push()' is deprecated.
+  context['ti'].xcom_push(key=key, value=value, execution_date=execution_date)
+
+[2023-12-30T15:22:01.779+0000] {taskinstance.py:1406} INFO - Marking task as SUCCESS. dag_id=run_dbt_model_cosmos, task_id=dbt_***_project.customer_information.customer_information_test, execution_date=20220910T000000, start_date=20231230T152156, end_date=20231230T152201
+[2023-12-30T15:22:01.814+0000] {local_task_job.py:164} INFO - Task exited with return code 0
+[2023-12-30T15:22:01.847+0000] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check

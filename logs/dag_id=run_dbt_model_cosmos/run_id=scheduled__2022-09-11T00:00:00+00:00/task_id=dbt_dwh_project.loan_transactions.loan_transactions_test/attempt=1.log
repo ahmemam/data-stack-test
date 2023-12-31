@@ -1,0 +1,59 @@
+[2023-12-30T15:22:53.132+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: run_dbt_model_cosmos.dbt_dwh_project.loan_transactions.loan_transactions_test scheduled__2022-09-11T00:00:00+00:00 [queued]>
+[2023-12-30T15:22:53.146+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: run_dbt_model_cosmos.dbt_dwh_project.loan_transactions.loan_transactions_test scheduled__2022-09-11T00:00:00+00:00 [queued]>
+[2023-12-30T15:22:53.146+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2023-12-30T15:22:53.146+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 6
+[2023-12-30T15:22:53.146+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2023-12-30T15:22:53.161+0000] {taskinstance.py:1383} INFO - Executing <Task(DbtTestLocalOperator): dbt_dwh_project.loan_transactions.loan_transactions_test> on 2022-09-11 00:00:00+00:00
+[2023-12-30T15:22:53.168+0000] {standard_task_runner.py:55} INFO - Started process 20335 to run task
+[2023-12-30T15:22:53.173+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'run_dbt_model_cosmos', 'dbt_dwh_project.loan_transactions.loan_transactions_test', 'scheduled__2022-09-11T00:00:00+00:00', '--job-id', '207', '--raw', '--subdir', 'DAGS_FOLDER/run_dbt_models_cosmos.py', '--cfg-path', '/tmp/tmp0vvj4_ke']
+[2023-12-30T15:22:53.173+0000] {standard_task_runner.py:83} INFO - Job 207: Subtask dbt_dwh_project.loan_transactions.loan_transactions_test
+[2023-12-30T15:22:53.247+0000] {task_command.py:376} INFO - Running <TaskInstance: run_dbt_model_cosmos.dbt_dwh_project.loan_transactions.loan_transactions_test scheduled__2022-09-11T00:00:00+00:00 [running]> on host 683423f116e7
+[2023-12-30T15:22:53.321+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=alonso_md
+AIRFLOW_CTX_DAG_ID=run_dbt_model_cosmos
+AIRFLOW_CTX_TASK_ID=dbt_dwh_project.loan_transactions.loan_transactions_test
+AIRFLOW_CTX_EXECUTION_DATE=2022-09-11T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-09-11T00:00:00+00:00
+[2023-12-30T15:22:53.329+0000] {base.py:71} INFO - Using connection ID 'postgres_default' for task execution.
+[2023-12-30T15:22:53.330+0000] {local.py:136} INFO - Cloning project to writable temp directory /tmp/tmpk7luhi3x from //opt/airflow/dags/../dbt/dwh
+[2023-12-30T15:22:53.377+0000] {local.py:157} INFO - Trying to run the command:
+ ['dbt', 'test', '--vars', '{"target_date": "2022-09-11"}', '--models', 'loan_transactions', '--profile', 'postgres_profile']
+From /tmp/tmpk7luhi3x/dbt_project
+[2023-12-30T15:22:53.378+0000] {adapted_subprocesshook.py:53} INFO - Tmp dir root location: 
+ /tmp
+[2023-12-30T15:22:53.378+0000] {adapted_subprocesshook.py:66} INFO - Running command: ['dbt', 'test', '--vars', '{"target_date": "2022-09-11"}', '--models', 'loan_transactions', '--profile', 'postgres_profile']
+[2023-12-30T15:22:53.392+0000] {adapted_subprocesshook.py:77} INFO - Output:
+[2023-12-30T15:22:55.426+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:55  Running with dbt=1.4.6
+[2023-12-30T15:22:55.488+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:55  Unable to do partial parsing because config vars, config profile, or config target have changed
+[2023-12-30T15:22:55.489+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:55  Unable to do partial parsing because profile has changed
+[2023-12-30T15:22:55.490+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:55  Unable to do partial parsing because env vars used in profiles.yml have changed
+[2023-12-30T15:22:57.236+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:57  Found 8 models, 15 tests, 0 snapshots, 0 analyses, 703 macros, 0 operations, 0 seed files, 3 sources, 0 exposures, 0 metrics
+[2023-12-30T15:22:57.238+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:57
+[2023-12-30T15:22:57.414+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:57  Concurrency: 1 threads (target='dev')
+[2023-12-30T15:22:57.414+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:57
+[2023-12-30T15:22:57.421+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:57  1 of 5 START test dbt_expectations_expect_column_values_to_be_between_loan_transactions_interestRate__0_05  [RUN]
+[2023-12-30T15:22:57.461+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:57  1 of 5 PASS dbt_expectations_expect_column_values_to_be_between_loan_transactions_interestRate__0_05  [[32mPASS[0m in 0.04s]
+[2023-12-30T15:22:57.463+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:57  2 of 5 START test dbt_expectations_expect_column_values_to_be_between_loan_transactions_loanAmount__1000__False  [RUN]
+[2023-12-30T15:22:57.484+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:57  2 of 5 PASS dbt_expectations_expect_column_values_to_be_between_loan_transactions_loanAmount__1000__False  [[32mPASS[0m in 0.02s]
+[2023-12-30T15:22:57.485+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:57  3 of 5 START test dbt_expectations_expect_column_values_to_be_between_loan_transactions_paymentPeriod__12__False  [RUN]
+[2023-12-30T15:22:57.506+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:57  3 of 5 PASS dbt_expectations_expect_column_values_to_be_between_loan_transactions_paymentPeriod__12__False  [[32mPASS[0m in 0.02s]
+[2023-12-30T15:22:57.508+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:57  4 of 5 START test not_null_loan_transactions_customerId ........................ [RUN]
+[2023-12-30T15:22:57.535+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:57  4 of 5 PASS not_null_loan_transactions_customerId .............................. [[32mPASS[0m in 0.03s]
+[2023-12-30T15:22:57.537+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:57  5 of 5 START test unique_loan_transactions_customerId .......................... [RUN]
+[2023-12-30T15:22:57.569+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:57  5 of 5 PASS unique_loan_transactions_customerId ................................ [[32mPASS[0m in 0.03s]
+[2023-12-30T15:22:57.635+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:57
+[2023-12-30T15:22:57.635+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:57  Finished running 5 tests in 0 hours 0 minutes and 0.40 seconds (0.40s).
+[2023-12-30T15:22:57.649+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:57
+[2023-12-30T15:22:57.649+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:57  [32mCompleted successfully[0m
+[2023-12-30T15:22:57.650+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:57
+[2023-12-30T15:22:57.650+0000] {adapted_subprocesshook.py:87} INFO - [0m15:22:57  Done. PASS=5 WARN=0 ERROR=0 SKIP=0 TOTAL=5
+[2023-12-30T15:22:58.433+0000] {adapted_subprocesshook.py:91} INFO - Command exited with return code 0
+[2023-12-30T15:22:58.563+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/models/baseoperator.py:1390: RemovedInAirflow3Warning: Passing 'execution_date' to 'TaskInstance.xcom_push()' is deprecated.
+  context['ti'].xcom_push(key=key, value=value, execution_date=execution_date)
+
+[2023-12-30T15:22:58.603+0000] {taskinstance.py:1406} INFO - Marking task as SUCCESS. dag_id=run_dbt_model_cosmos, task_id=dbt_***_project.loan_transactions.loan_transactions_test, execution_date=20220911T000000, start_date=20231230T152253, end_date=20231230T152258
+[2023-12-30T15:22:58.639+0000] {local_task_job.py:164} INFO - Task exited with return code 0
+[2023-12-30T15:22:58.685+0000] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

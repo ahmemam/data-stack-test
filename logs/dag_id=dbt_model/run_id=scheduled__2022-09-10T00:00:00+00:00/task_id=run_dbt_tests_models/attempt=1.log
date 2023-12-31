@@ -1,0 +1,69 @@
+[2023-12-30T14:55:37.035+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dbt_model.run_dbt_tests_models scheduled__2022-09-10T00:00:00+00:00 [queued]>
+[2023-12-30T14:55:37.056+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dbt_model.run_dbt_tests_models scheduled__2022-09-10T00:00:00+00:00 [queued]>
+[2023-12-30T14:55:37.056+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2023-12-30T14:55:37.056+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 6
+[2023-12-30T14:55:37.056+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2023-12-30T14:55:37.079+0000] {taskinstance.py:1383} INFO - Executing <Task(BashOperator): run_dbt_tests_models> on 2022-09-10 00:00:00+00:00
+[2023-12-30T14:55:37.087+0000] {standard_task_runner.py:55} INFO - Started process 17977 to run task
+[2023-12-30T14:55:37.092+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'dbt_model', 'run_dbt_tests_models', 'scheduled__2022-09-10T00:00:00+00:00', '--job-id', '153', '--raw', '--subdir', 'DAGS_FOLDER/run_dbt._models.py', '--cfg-path', '/tmp/tmpzxyx1c6u']
+[2023-12-30T14:55:37.092+0000] {standard_task_runner.py:83} INFO - Job 153: Subtask run_dbt_tests_models
+[2023-12-30T14:55:37.150+0000] {task_command.py:376} INFO - Running <TaskInstance: dbt_model.run_dbt_tests_models scheduled__2022-09-10T00:00:00+00:00 [running]> on host 683423f116e7
+[2023-12-30T14:55:37.210+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=alonso_md
+AIRFLOW_CTX_DAG_ID=dbt_model
+AIRFLOW_CTX_TASK_ID=run_dbt_tests_models
+AIRFLOW_CTX_EXECUTION_DATE=2022-09-10T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-09-10T00:00:00+00:00
+[2023-12-30T14:55:37.211+0000] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2023-12-30T14:55:37.213+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', '    dbt test     --profiles-dir //opt/***/dags/../dbt/     --project-dir ///opt/***/dags/../dbt//dwh     --target prod_***']
+[2023-12-30T14:55:37.225+0000] {subprocess.py:86} INFO - Output:
+[2023-12-30T14:55:39.140+0000] {subprocess.py:93} INFO - [0m14:55:39  Running with dbt=1.4.6
+[2023-12-30T14:55:39.191+0000] {subprocess.py:93} INFO - [0m14:55:39  Unable to do partial parsing because config vars, config profile, or config target have changed
+[2023-12-30T14:55:40.824+0000] {subprocess.py:93} INFO - [0m14:55:40  Found 8 models, 15 tests, 0 snapshots, 0 analyses, 703 macros, 0 operations, 0 seed files, 3 sources, 0 exposures, 0 metrics
+[2023-12-30T14:55:40.826+0000] {subprocess.py:93} INFO - [0m14:55:40
+[2023-12-30T14:55:40.930+0000] {subprocess.py:93} INFO - [0m14:55:40  Concurrency: 4 threads (target='prod_***')
+[2023-12-30T14:55:40.930+0000] {subprocess.py:93} INFO - [0m14:55:40
+[2023-12-30T14:55:40.936+0000] {subprocess.py:93} INFO - [0m14:55:40  1 of 15 START test dbt_expectations_expect_column_values_to_be_between_daily_customer_drivers_healthscore__900__100__False  [RUN]
+[2023-12-30T14:55:40.937+0000] {subprocess.py:93} INFO - [0m14:55:40  2 of 15 START test dbt_expectations_expect_column_values_to_be_between_daily_customer_drivers_monthlysalary__150000__600__False  [RUN]
+[2023-12-30T14:55:40.938+0000] {subprocess.py:93} INFO - [0m14:55:40  3 of 15 START test dbt_expectations_expect_column_values_to_be_between_loan_transactions_interestRate__0_05  [RUN]
+[2023-12-30T14:55:40.939+0000] {subprocess.py:93} INFO - [0m14:55:40  4 of 15 START test dbt_expectations_expect_column_values_to_be_between_loan_transactions_loanAmount__1000__False  [RUN]
+[2023-12-30T14:55:41.012+0000] {subprocess.py:93} INFO - [0m14:55:41  1 of 15 PASS dbt_expectations_expect_column_values_to_be_between_daily_customer_drivers_healthscore__900__100__False  [[32mPASS[0m in 0.07s]
+[2023-12-30T14:55:41.017+0000] {subprocess.py:93} INFO - [0m14:55:41  5 of 15 START test dbt_expectations_expect_column_values_to_be_between_loan_transactions_paymentPeriod__12__False  [RUN]
+[2023-12-30T14:55:41.019+0000] {subprocess.py:93} INFO - [0m14:55:41  2 of 15 PASS dbt_expectations_expect_column_values_to_be_between_daily_customer_drivers_monthlysalary__150000__600__False  [[32mPASS[0m in 0.08s]
+[2023-12-30T14:55:41.020+0000] {subprocess.py:93} INFO - [0m14:55:41  4 of 15 PASS dbt_expectations_expect_column_values_to_be_between_loan_transactions_loanAmount__1000__False  [[32mPASS[0m in 0.08s]
+[2023-12-30T14:55:41.027+0000] {subprocess.py:93} INFO - [0m14:55:41  3 of 15 PASS dbt_expectations_expect_column_values_to_be_between_loan_transactions_interestRate__0_05  [[32mPASS[0m in 0.08s]
+[2023-12-30T14:55:41.031+0000] {subprocess.py:93} INFO - [0m14:55:41  6 of 15 START test not_null_customer_information_customerId .................... [RUN]
+[2023-12-30T14:55:41.032+0000] {subprocess.py:93} INFO - [0m14:55:41  7 of 15 START test not_null_customer_information_firstName ..................... [RUN]
+[2023-12-30T14:55:41.036+0000] {subprocess.py:93} INFO - [0m14:55:41  8 of 15 START test not_null_customer_information_lastName ...................... [RUN]
+[2023-12-30T14:55:41.078+0000] {subprocess.py:93} INFO - [0m14:55:41  5 of 15 PASS dbt_expectations_expect_column_values_to_be_between_loan_transactions_paymentPeriod__12__False  [[32mPASS[0m in 0.06s]
+[2023-12-30T14:55:41.081+0000] {subprocess.py:93} INFO - [0m14:55:41  9 of 15 START test not_null_daily_customer_drivers_customerId .................. [RUN]
+[2023-12-30T14:55:41.100+0000] {subprocess.py:93} INFO - [0m14:55:41  8 of 15 PASS not_null_customer_information_lastName ............................ [[32mPASS[0m in 0.05s]
+[2023-12-30T14:55:41.101+0000] {subprocess.py:93} INFO - [0m14:55:41  7 of 15 PASS not_null_customer_information_firstName ........................... [[32mPASS[0m in 0.06s]
+[2023-12-30T14:55:41.102+0000] {subprocess.py:93} INFO - [0m14:55:41  6 of 15 PASS not_null_customer_information_customerId .......................... [[32mPASS[0m in 0.07s]
+[2023-12-30T14:55:41.104+0000] {subprocess.py:93} INFO - [0m14:55:41  10 of 15 START test not_null_loan_transactions_customerId ...................... [RUN]
+[2023-12-30T14:55:41.105+0000] {subprocess.py:93} INFO - [0m14:55:41  11 of 15 START test not_null_loan_transactions_w_drivers_customerId ............ [RUN]
+[2023-12-30T14:55:41.106+0000] {subprocess.py:93} INFO - [0m14:55:41  12 of 15 START test unique_customer_information_customerId ..................... [RUN]
+[2023-12-30T14:55:41.141+0000] {subprocess.py:93} INFO - [0m14:55:41  9 of 15 PASS not_null_daily_customer_drivers_customerId ........................ [[32mPASS[0m in 0.06s]
+[2023-12-30T14:55:41.146+0000] {subprocess.py:93} INFO - [0m14:55:41  13 of 15 START test unique_daily_customer_drivers_customerId ................... [RUN]
+[2023-12-30T14:55:41.164+0000] {subprocess.py:93} INFO - [0m14:55:41  10 of 15 PASS not_null_loan_transactions_customerId ............................ [[32mPASS[0m in 0.06s]
+[2023-12-30T14:55:41.166+0000] {subprocess.py:93} INFO - [0m14:55:41  14 of 15 START test unique_loan_transactions_customerId ........................ [RUN]
+[2023-12-30T14:55:41.179+0000] {subprocess.py:93} INFO - [0m14:55:41  11 of 15 PASS not_null_loan_transactions_w_drivers_customerId .................. [[32mPASS[0m in 0.07s]
+[2023-12-30T14:55:41.185+0000] {subprocess.py:93} INFO - [0m14:55:41  12 of 15 PASS unique_customer_information_customerId ........................... [[32mPASS[0m in 0.07s]
+[2023-12-30T14:55:41.187+0000] {subprocess.py:93} INFO - [0m14:55:41  15 of 15 START test unique_loan_transactions_w_drivers_customerId .............. [RUN]
+[2023-12-30T14:55:41.196+0000] {subprocess.py:93} INFO - [0m14:55:41  13 of 15 PASS unique_daily_customer_drivers_customerId ......................... [[32mPASS[0m in 0.05s]
+[2023-12-30T14:55:41.209+0000] {subprocess.py:93} INFO - [0m14:55:41  14 of 15 PASS unique_loan_transactions_customerId .............................. [[32mPASS[0m in 0.04s]
+[2023-12-30T14:55:41.216+0000] {subprocess.py:93} INFO - [0m14:55:41  15 of 15 PASS unique_loan_transactions_w_drivers_customerId .................... [[32mPASS[0m in 0.03s]
+[2023-12-30T14:55:41.246+0000] {subprocess.py:93} INFO - [0m14:55:41
+[2023-12-30T14:55:41.246+0000] {subprocess.py:93} INFO - [0m14:55:41  Finished running 15 tests in 0 hours 0 minutes and 0.42 seconds (0.42s).
+[2023-12-30T14:55:41.265+0000] {subprocess.py:93} INFO - [0m14:55:41
+[2023-12-30T14:55:41.266+0000] {subprocess.py:93} INFO - [0m14:55:41  [32mCompleted successfully[0m
+[2023-12-30T14:55:41.266+0000] {subprocess.py:93} INFO - [0m14:55:41
+[2023-12-30T14:55:41.266+0000] {subprocess.py:93} INFO - [0m14:55:41  Done. PASS=15 WARN=0 ERROR=0 SKIP=0 TOTAL=15
+[2023-12-30T14:55:42.086+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-12-30T14:55:42.136+0000] {taskinstance.py:1406} INFO - Marking task as SUCCESS. dag_id=dbt_model, task_id=run_dbt_tests_models, execution_date=20220910T000000, start_date=20231230T145537, end_date=20231230T145542
+[2023-12-30T14:55:42.217+0000] {local_task_job.py:164} INFO - Task exited with return code 0
+[2023-12-30T14:55:42.263+0000] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check
