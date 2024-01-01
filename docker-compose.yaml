@@ -85,7 +85,7 @@ services:
     <<: *airflow-common
     command: webserver
     ports:
-      - 8085:8080
+      - 8084:8080
     healthcheck:
       test: ["CMD", "curl", "--fail", "http://localhost:8085/health"]
       interval: 10s
@@ -348,7 +348,7 @@ services:
       - 8585
       - 8586
     ports:
-      - "8585:8585"
+      - "8083:8585"
       - "8586:8586"
     depends_on:
       elasticsearch:
@@ -398,7 +398,7 @@ services:
     image: minio/minio:latest
     ports:
       - "9000:9000"
-      - "9090:9090"
+      - "8082:9090"
     volumes:
       - minio_storage:/data
     environment:
@@ -609,7 +609,7 @@ services:
     container_name: airbyte-webapp
     restart: unless-stopped
     ports:
-      - "56174:80"
+      - "8000:80"
     environment:
       - INTERNAL_API_HOST=${INTERNAL_API_HOST}
       - CONNECTOR_BUILDER_API_HOST=${CONNECTOR_BUILDER_API_HOST}
@@ -709,7 +709,7 @@ services:
     container_name: airbyte-proxy
     restart: unless-stopped
     ports:
-      - "8000:8000"
+      - "56174:8000"
       - "8001:8001"
       - "8003:8003"
       - "8006:8006"
