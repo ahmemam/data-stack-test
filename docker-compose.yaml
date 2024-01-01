@@ -85,7 +85,7 @@ services:
     <<: *airflow-common
     command: webserver
     ports:
-      - 8084:8080
+      - 8080:8080
     healthcheck:
       test: ["CMD", "curl", "--fail", "http://localhost:8085/health"]
       interval: 10s
@@ -384,7 +384,7 @@ services:
     expose:
       - 8080
     ports:
-      - "8080:8080"
+      - "8084:8080"
     volumes:
       - ingestion-volume-dag-airflow:/opt/airflow/dag_generated_configs
       - ingestion-volume-dags:/opt/airflow/dags
