@@ -250,7 +250,7 @@ services:
     volumes:
       - postgres-dwh-volume:/var/lib/postgresql/data
     ports:
-      - 5455:5432
+      - 8084:5432
     restart: always
 
   ###########################################################
